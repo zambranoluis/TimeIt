@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+// import { useRouter } from "next/navigation"; // Importar desde "next/navigation" en apps con appDir
 import { useTheme } from "../context/ThemeContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,8 +11,8 @@ import { FaUser, FaUsers, FaCalendarAlt, FaPowerOff } from "react-icons/fa";
 import { SiCashapp } from "react-icons/si";
 
 interface AsideProps {
-  toggleAside: () => void; // Una función que no recibe argumentos y no retorna nada
-  isAsideOpen: boolean;    // Un booleano para determinar si el aside está abierto
+  toggleAside: () => void;
+  isAsideOpen: boolean;
 }
 
 interface Option {
@@ -21,34 +22,35 @@ interface Option {
 }
 
 const asideOptions: Option[] = [
-  {
-    name: "PROFILE",
-    path: "/dashboard/profile",
-    icon: <FaUser className="text-2xl" />
-  },
-  {
-    name: "CLIENTS",
-    path: "/dashboard/clients",
-    icon: <FaUsers className="text-2xl" />
-  },
-  {
-    name: "CALENDAR",
-    path: "/dashboard/calendar",
-    icon: <FaCalendarAlt className="text-2xl" />
-  },
-  {
-    name: "PAYMENTS",
-    path: "/dashboard/payments",
-    icon: <SiCashapp className="text-2xl" />
-  },
+  { name: "PROFILE", path: "/dashboard/profile", icon: <FaUser className="text-2xl" /> },
+  { name: "CLIENTS", path: "/dashboard/clients", icon: <FaUsers className="text-2xl" /> },
+  { name: "CALENDAR", path: "/dashboard/calendar", icon: <FaCalendarAlt className="text-2xl" /> },
+  { name: "PAYMENTS", path: "/dashboard/payments", icon: <SiCashapp className="text-2xl" /> },
 ];
 
 const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
-  // Tipificamos el estado para aceptar solo nombres de opciones o `null`
   const [asideSelectedOption, setAsideSelectedOption] = useState<string | null>(null);
-
-  // Usamos `useTheme`, asegurándonos de que devuelve `theme` y `toggleTheme` con tipos correctos
   const { theme } = useTheme();
+  // const router = useRouter(); // Hook de Next.js para acceder al pathname
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true); // Marcar como montado en el cliente
+
+    if (!isMounted) return;
+
+    const currentPath = window.location.pathname.toLowerCase();
+
+    // Verificar si el pathname incluye alguna de las palabras clave
+    const matchedOption = asideOptions.find((option) =>
+      currentPath.includes(option.name.toLowerCase())
+    );
+
+    // Actualizar el estado si se encuentra una coincidencia
+    if (matchedOption) {
+      setAsideSelectedOption(matchedOption.name);
+    }
+  }, [isMounted]); // Ejecutar después del montaje
 
   return (
     <aside
@@ -56,26 +58,34 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
         isAsideOpen ? "visible" : "hidden"
       } select-none h-full z-[2000] absolute w-[80%] max-w-[400px] items-center bggreen-300 flex flex-col border-r border-[--color-border] bg-[--color-background] justify-between`}
     >
-      {/* Header del aside */}
       <div
         id="asideHead"
-        className="flex select-none bgpurple-400 w-full justify-between items-center  px-3 py-3"
+        className="flex select-none bgpurple-400 w-full justify-between items-center px-3 py-3"
       >
         <div className="flex bgred-300 justify-start px-4 items-center w-[70%] py-3">
-        <Image height={50} width={70} className={` w-full max-w-[100px] h-full drop-shadowanimate ${theme === "light" ? "drop-shadow-[1.5px_1.5px_1.5px_white]" : "drop-shadow-[1.5px_1.5px_1.5px_black]"}`} src={`https://github.com/BPM94/TTMD/raw/main/timeitLogoGreen.png`} alt="" />
+          <Image
+            height={50}
+            width={70}
+            className={`w-full max-w-[100px] h-full drop-shadowanimate ${
+              theme === "light"
+                ? "drop-shadow-[1.5px_1.5px_1.5px_white]"
+                : "drop-shadow-[1.5px_1.5px_1.5px_]"
+            }`}
+            src={`https://github.com/BPM94/TTMD/raw/main/timeitLogoGreen.png`}
+            alt=""
+          />
         </div>
         <div className="flex bggreen-300 justify-center items-center w-[30%] py-3">
-        <GiHamburgerMenu
-          className="text-2xl cursor-pointer transition-colors duration-300 hover:text-[--color-text-hover]"
-          onClick={(e) => {
-            e.preventDefault();
-            toggleAside();
-          }}
-        />
+          <GiHamburgerMenu
+            className="text-2xl cursor-pointer transition-colors duration-300 hover:text-[--color-text-hover]"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleAside();
+            }}
+          />
         </div>
       </div>
 
-      {/* Opciones del aside */}
       <div id="asideTop" className="flex flex-col gap-4 p-3 w-full h-full bgrose-300">
         {asideOptions.map((option) => (
           <Link
@@ -83,7 +93,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
               asideSelectedOption === option.name
                 ? "bg-[--color-background-hover] text-[--color-text-hover]"
                 : ""
-            } w-full  items-center hover:bg-[--color-button-hover] cursor-pointer hover:text-[--color-button-text-hover] transition-colors duration-300 rounded-full`}
+            } w-full items-center hover:bg-[--color-button-hover] cursor-pointer hover:text-[--color-button-text-hover] transition-colors duration-300 rounded-full`}
             key={option.name}
             id={`link-${option.name}`}
             href={option.path}
@@ -100,7 +110,6 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
         ))}
       </div>
 
-      {/* Logout */}
       <div
         id="asideBottom"
         className="flex flex-col px-6 text-[--color-text]"
@@ -111,7 +120,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
       >
         <div
           id="logout"
-          className="flex items-center bgred-300 justify-center p-4 gap-3  hover:text-[--color-text-hover] cursor-pointer"
+          className="flex items-center bgred-300 justify-center p-4 gap-3 hover:text-[--color-text-hover] cursor-pointer"
         >
           <FaPowerOff className="text-xl cursor-pointer" />
           <label className="text-sm cursor-pointer">LOGOUT</label>
