@@ -1,0 +1,130 @@
+'use client';
+
+import { useState } from "react";
+import { useTheme } from "../context/ThemeContext";
+import Image from "next/image";
+import Link from "next/link";
+
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaUser, FaUsers, FaCalendarAlt, FaPowerOff } from "react-icons/fa";
+import { SiCashapp } from "react-icons/si";
+
+interface AsideProps {
+  toggleAside: () => void; // Una función que no recibe argumentos y no retorna nada
+  isAsideOpen: boolean;    // Un booleano para determinar si el aside está abierto
+}
+
+interface Option {
+  name: string;
+  path: string;
+  icon: JSX.Element;
+}
+
+const asideOptions: Option[] = [
+  {
+    name: "PROFILE",
+    path: "/dashboard/profile",
+    icon: <FaUser className="text-2xl" />
+  },
+  {
+    name: "CLIENTS",
+    path: "/dashboard/clients",
+    icon: <FaUsers className="text-2xl" />
+  },
+  {
+    name: "CALENDAR",
+    path: "/dashboard/calendar",
+    icon: <FaCalendarAlt className="text-2xl" />
+  },
+  {
+    name: "PAYMENTS",
+    path: "/dashboard/payments",
+    icon: <SiCashapp className="text-2xl" />
+  },
+];
+
+const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
+  // Tipificamos el estado para aceptar solo nombres de opciones o `null`
+  const [asideSelectedOption, setAsideSelectedOption] = useState<string | null>(null);
+
+  // Usamos `useTheme`, asegurándonos de que devuelve `theme` y `toggleTheme` con tipos correctos
+  const { theme } = useTheme();
+
+  return (
+    <aside
+      className={`${
+        isAsideOpen ? "visible" : "hidden"
+      } select-none h-full z-[2000] absolute w-[80%] max-w-[400px] items-center bggreen-300 flex flex-col border-r border-[--color-border] bg-[--color-background] justify-between`}
+    >
+      {/* Header del aside */}
+      <div
+        id="asideHead"
+        className="flex select-none bgpurple-400 w-full justify-between items-center  px-3 py-3"
+      >
+        <div className="flex bgred-300 justify-start px-4 items-center w-[70%] py-3">
+        <Image height={50} width={70} className={` w-full max-w-[100px] h-full drop-shadowanimate ${theme === "light" ? "drop-shadow-[1.5px_1.5px_1.5px_white]" : "drop-shadow-[1.5px_1.5px_1.5px_black]"}`} src={`https://github.com/BPM94/TTMD/raw/main/timeitLogoGreen.png`} alt="" />
+        </div>
+        <div className="flex bggreen-300 justify-center items-center w-[30%] py-3">
+        <GiHamburgerMenu
+          className="text-2xl cursor-pointer transition-colors duration-300 hover:text-[--color-text-hover]"
+          onClick={(e) => {
+            e.preventDefault();
+            toggleAside();
+          }}
+        />
+        </div>
+      </div>
+
+      {/* Opciones del aside */}
+      <div id="asideTop" className="flex flex-col gap-4 p-3 w-full h-full bgrose-300">
+        {asideOptions.map((option) => (
+          <Link
+            className={`no-underline flex px-4 py-3 gap-3 ${
+              asideSelectedOption === option.name
+                ? "bg-[--color-background-hover] text-[--color-text-hover]"
+                : ""
+            } w-full  items-center hover:bg-[--color-button-hover] cursor-pointer hover:text-[--color-button-text-hover] transition-colors duration-300 rounded-full`}
+            key={option.name}
+            id={`link-${option.name}`}
+            href={option.path}
+            onClick={() => setAsideSelectedOption(option.name)}
+          >
+            <div className="flex justify-center items-center">{option.icon}</div>
+            <label
+              className="cursor-pointer text-base"
+              htmlFor={`link-${option.name}`}
+            >
+              {option.name}
+            </label>
+          </Link>
+        ))}
+      </div>
+
+      {/* Logout */}
+      <div
+        id="asideBottom"
+        className="flex flex-col px-6 text-[--color-text]"
+        onClick={(e) => {
+          e.preventDefault();
+          window.location.href = "/";
+        }}
+      >
+        <div
+          id="logout"
+          className="flex items-center bgred-300 justify-center p-4 gap-3  hover:text-[--color-text-hover] cursor-pointer"
+        >
+          <FaPowerOff className="text-xl cursor-pointer" />
+          <label className="text-sm cursor-pointer">LOGOUT</label>
+        </div>
+      </div>
+      <div
+        id="copyright"
+        className="flex w-full pb-4 bgrose-400 justify-center items-center"
+      >
+        <p className="text-sm text-center">Titan Tech, Copyright 2024.</p>
+      </div>
+    </aside>
+  );
+};
+
+export default Aside;
