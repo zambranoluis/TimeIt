@@ -1,13 +1,34 @@
+import { createContext, useContext, useState, ReactNode } from "react";
 
-import { createContext, useContext, useState } from "react";
+interface DataContextProps {
+  profileData: ProfileData | null;
+  setProfileData: (data: ProfileData | null) => void;
+  clearData: () => void;
+}
 
-const DataContext = createContext();
+interface ProfileData {
+  // Define aquí la estructura de los datos del perfil
+  name?: string;
+  email?: string;
+}
 
-export const useDataContext = () => useContext(DataContext);
+const DataContext = createContext<DataContextProps | undefined>(undefined);
 
-export const DataProvider = ({ children }) => {
-  const [profileData, setProfileData] = useState(null);
-  
+export const useDataContext = (): DataContextProps => {
+  const context = useContext(DataContext);
+  if (!context) {
+    throw new Error("useDataContext must be used within a DataProvider");
+  }
+  return context;
+};
+
+interface DataProviderProps {
+  children: ReactNode;
+}
+
+export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
+  const [profileData, setProfileData] = useState<ProfileData | null>(null);
+
   const clearData = () => {
     setProfileData(null);
   };
@@ -18,7 +39,8 @@ export const DataProvider = ({ children }) => {
         profileData,
         setProfileData,
         clearData,
-      }}>
+      }}
+    >
       {children}
     </DataContext.Provider>
   );
