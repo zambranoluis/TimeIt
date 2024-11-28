@@ -5,7 +5,7 @@ import { SlSocialFacebook } from "react-icons/sl";
 import { SlSocialInstagram } from "react-icons/sl";
 import { SlSocialYoutube } from "react-icons/sl";
 
-// import {Link} from "next/link";
+import Link from "next/link";
 
 
 import {Image} from "@nextui-org/image";
@@ -22,9 +22,9 @@ const ProfileClient = () => {
         </video>
       </div>
       <div id="socials" className="absolute z-[150] flex  top-[20px] right-[20px] bgred-300 gap-4">
-        <a href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialFacebook className="text-2xl"/></a>
-        <a href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialInstagram className="text-2xl"/></a>
-        <a href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialYoutube className="text-2xl"/></a>
+        <Link href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialFacebook className="text-2xl"/></Link>
+        <Link href="https://www.instagram.com/thefitclubmcbo/" target="_blank" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialInstagram className="text-2xl"/></Link>
+        <Link href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialYoutube className="text-2xl"/></Link>
       </div>
       <div id="userInfo" className=" bgred-300 bottom-[20px] absolute z-[150] flex flex-col justify-center items-center  bg-[--color-background] text-[--color-text] gap-4 p-4 rounded-xl shadow-sm shadow-[--color-shadow]">
         <div id="avatarContainer">

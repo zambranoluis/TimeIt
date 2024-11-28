@@ -44,7 +44,7 @@ const Clients = () => {
   const [currentClients, setCurrentClients] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col w-[90%] place-self-center mt-5">
+    <div className="flex flex-col w-[90%] place-self-center mt-5 gap-4">
       <div className="flex flex-col bggreen-400 place-self-start ">
         <div className="flex">
           {
@@ -60,17 +60,153 @@ const Clients = () => {
             ))
           }
         </div>
-        <div className="w-[300px] bg-purple-400 flex justify-center items-center rounded-md">
-          <input type="text" className="w-full outline-none bg-[--color-button] text-[--color-background] p-2 rounded-l-md" />
-          <div className="flex p-2 bg-red-600 rounded-r-md ">
-            <FaSearch className="text-2xl" />
+        <div className="w-[300px] h-[50px] bgpurple-400 flex justify-center p-2 items-center rounded-b-md border-[--color-border] border bgblue-400">
+          <div tabIndex={0} className="flex h-full w-full rounded-lg border-2 border-[--color-border]">
+          <input type="text" className="w-full  bg[--color-button]  text-[--color-text] p-1 outline-none rounded-l-md" />
+          <div className="flex h-full w-[40px] justify-center border-l border-l-[--color-border] items-center bgred-600 hover:bg-red-500 rounded-r-md cursor-pointer hover:outline-2 hover:outline-red-500">
+            <FaSearch className="text-2xl " />
+          </div>
           </div>
         </div>
       </div>
-      <div className="flex  h-[500px] w-full bg-[--color-] place-self-center rounded-b-md rounded-tr-md border border-[--color-border] overflow-y-auto">
-        <div className="flex flex-col p-4 w-full h-full bgred-300">
-        <Card
-          className='w-full max-w-[400px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
+      <div className="flex  max-h-[500px] w-full bg-[--color-background-2] place-self-center rounded-md border border-[--color-border] overflow-y-auto p-4">
+        <div className="grid max-md:place-content-center md:grid-cols-2 lg:grid-cols-3  gap-6 w-full h-full bgred-300">
+        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
+          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
+            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
+            <div className='flex flex-col w-full'>
+              <h1>MrMonkaDonk</h1>
+              <h1>Seras Victoria Seras Eterna</h1>
+              <h2>zambranomnk@gmail.com</h2>
+              <h2>+58 412 3456 789</h2>
+            </div>
+          </CardHeader>
+          <CardBody className=''>
+            <h3>Subscription: Yoga</h3>
+            <h3>Plans: Monthly</h3>
+            <h3>Schedules: 3PM-7PM</h3>
+          </CardBody>
+          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <RiCalendarScheduleFill className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaUserPen className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaBan className="text-lg" />
+            </div>
+          </CardFooter>
+        </Card>
+        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
+          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
+            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
+            <div className='flex flex-col w-full'>
+              <h1>MrMonkaDonk</h1>
+              <h1>Seras Victoria Seras Eterna</h1>
+              <h2>zambranomnk@gmail.com</h2>
+              <h2>+58 412 3456 789</h2>
+            </div>
+          </CardHeader>
+          <CardBody className=''>
+            <h3>Subscription: Yoga</h3>
+            <h3>Plans: Monthly</h3>
+            <h3>Schedules: 3PM-7PM</h3>
+          </CardBody>
+          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <RiCalendarScheduleFill className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaUserPen className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaBan className="text-lg" />
+            </div>
+          </CardFooter>
+        </Card>
+        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
+          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
+            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
+            <div className='flex flex-col w-full'>
+              <h1>MrMonkaDonk</h1>
+              <h1>Seras Victoria Seras Eterna</h1>
+              <h2>zambranomnk@gmail.com</h2>
+              <h2>+58 412 3456 789</h2>
+            </div>
+          </CardHeader>
+          <CardBody className=''>
+            <h3>Subscription: Yoga</h3>
+            <h3>Plans: Monthly</h3>
+            <h3>Schedules: 3PM-7PM</h3>
+          </CardBody>
+          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <RiCalendarScheduleFill className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaUserPen className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaBan className="text-lg" />
+            </div>
+          </CardFooter>
+        </Card>
+        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
+          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
+            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
+            <div className='flex flex-col w-full'>
+              <h1>MrMonkaDonk</h1>
+              <h1>Seras Victoria Seras Eterna</h1>
+              <h2>zambranomnk@gmail.com</h2>
+              <h2>+58 412 3456 789</h2>
+            </div>
+          </CardHeader>
+          <CardBody className=''>
+            <h3>Subscription: Yoga</h3>
+            <h3>Plans: Monthly</h3>
+            <h3>Schedules: 3PM-7PM</h3>
+          </CardBody>
+          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <RiCalendarScheduleFill className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaUserPen className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaBan className="text-lg" />
+            </div>
+          </CardFooter>
+        </Card>
+        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
+          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
+            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
+            <div className='flex flex-col w-full'>
+              <h1>MrMonkaDonk</h1>
+              <h1>Seras Victoria Seras Eterna</h1>
+              <h2>zambranomnk@gmail.com</h2>
+              <h2>+58 412 3456 789</h2>
+            </div>
+          </CardHeader>
+          <CardBody className=''>
+            <h3>Subscription: Yoga</h3>
+            <h3>Plans: Monthly</h3>
+            <h3>Schedules: 3PM-7PM</h3>
+          </CardBody>
+          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <RiCalendarScheduleFill className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaUserPen className="text-lg" />
+            </div>
+            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+              <FaBan className="text-lg" />
+            </div>
+          </CardFooter>
+        </Card>
+        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
           <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
             <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
             <div className='flex flex-col w-full'>

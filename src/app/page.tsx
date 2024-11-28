@@ -35,12 +35,12 @@ export default function Home() {
           <form className=" flex flex-col p-2 gap-4 ">
             <div className="flex flex-col p-2 rounded-md gap-2 ">
               <label
-                className="font-bold"
+                className="font-bold text-white"
                 htmlFor="email"
                 
               >Email:</label>
               <input
-                className="p-2 "
+                className="p-2 rounded-md "
                 id="email"
                 type="text"
                 placeholder="Email"
@@ -50,12 +50,12 @@ export default function Home() {
             </div>
             <div className="flex flex-col p-2 rounded-md gap-2 ">
               <label
-                className="font-bold"
+                className="font-bold text-white"
                 htmlFor="password"
               >Password:</label>
               <div className="flex relative ">
                 <input 
-                  className="p-2 " 
+                  className="p-2  rounded-md" 
                   id="password" 
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
