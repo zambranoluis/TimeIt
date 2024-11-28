@@ -4,7 +4,7 @@ import Profile from "@/components/Profile";
 
 function Page() {
   return (
-    <Profile />
+    <Profile  />
   );
 }
 export default Page;

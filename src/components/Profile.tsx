@@ -22,15 +22,15 @@ const ProfileClient = () => {
         </video>
       </div>
       <div id="socials" className="absolute z-[150] flex  top-[20px] right-[20px] bgred-300 gap-4">
-        <a href="#" className=".buttonHover p-3  bg-[--color-background] text-[--color-text] hover:bg-[--color-button-hover] hover:text-[--color-text-hover] rounded-xl flex"><SlSocialFacebook className="text-2xl"/></a>
-        <a href="#" className=".buttonHover p-3  bg-[--color-background] text-[--color-text] hover:bg-[--color-button-hover] hover:text-[--color-text-hover] rounded-xl flex"><SlSocialInstagram className="text-2xl"/></a>
-        <a href="#" className=".buttonHover p-3  bg-[--color-background] text-[--color-text] hover:bg-[--color-button-hover] hover:text-[--color-text-hover] rounded-xl flex"><SlSocialYoutube className="text-2xl"/></a>
+        <a href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialFacebook className="text-2xl"/></a>
+        <a href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialInstagram className="text-2xl"/></a>
+        <a href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialYoutube className="text-2xl"/></a>
       </div>
-      <div id="userInfo" className=" bgred-300 bottom-[20px] absolute z-[150] flex flex-col justify-center items-center  bg-[--color-background] text-[--color-text] gap-4 p-4 rounded-xl">
+      <div id="userInfo" className=" bgred-300 bottom-[20px] absolute z-[150] flex flex-col justify-center items-center  bg-[--color-background] text-[--color-text] gap-4 p-4 rounded-xl shadow-sm shadow-[--color-shadow]">
         <div id="avatarContainer">
-          <Image src="https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp" className="rounded-full max-w-[200px]" alt="" />
+          <Image src="https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp" className="rounded-full max-w-[150px]" alt="" />
         </div>
-        <div id="detailsContainer" className="flex flex-col z-[150] bottom-[20px] justify-center items-center p-4 gap-2">
+        <div id="detailsContainer" className="flex flex-col z-[150] bottom-[20px] justify-center items-center p-4 gap-1">
           <p className="text-3xl font-bold">Seras Victoria</p>
           <p className="text-xl fontbold">zambranomnk@gmail.com</p>
           <p className="text-xl fontbold">+58 412 3456 789</p>

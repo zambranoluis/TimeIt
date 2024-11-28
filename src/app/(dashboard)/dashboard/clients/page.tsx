@@ -1,9 +1,8 @@
 "use client";
+import Clients from "@/components/Clients";
 function Page() {
   return (
-  <>
-    <h1>Clients</h1>
-  </>
+  <Clients />
   );
 }
 export default Page;

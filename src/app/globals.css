@@ -17,6 +17,7 @@ html[data-theme="dark"] {
   --color-button-hover:#338FB3;
   --color-button-text:#003366;
   --color-button-text-hover:#003366;
+  --color-shadow: white;
 }
 
 html[data-theme="light"] {
@@ -34,6 +35,7 @@ html[data-theme="light"] {
   --color-button-hover:#004080;
   --color-button-text:#FFFFFF;
   --color-button-text-hover:#FFFFFF;
+  --color-shadow: black;
 
 
 }
