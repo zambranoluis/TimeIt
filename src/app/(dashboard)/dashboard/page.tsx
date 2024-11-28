@@ -1,5 +1,5 @@
 function DashboardPage() {
-  return <main className='w-full'></main>;
+  return <main className='w-full'>Dashboard</main>;
 }
 
 export default DashboardPage;
