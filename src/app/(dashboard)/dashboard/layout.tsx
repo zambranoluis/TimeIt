@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 2000);
 
     return () => clearTimeout(timer); // Limpiar el timeout al desmontar
   }, []);
@@ -34,7 +34,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     return (
       <div className="w-full h-full bg-[--color-background] text-[--color-text] p-8 gap-8 text-4xl font-bold text-center flex flex-col justify-center items-center">
         <Image
-          className="w-[90%]  "
+          className="w-[90%] place-self-center "
           src="https://github.com/BPM94/TTMD/raw/main/loadingDashboard.webp"
           alt="Loading"
         />

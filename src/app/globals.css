@@ -2,39 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* #80CBC4 */
+
 html[data-theme="dark"] {
   --color-background: #000020;
-  --color-background-section: #003366;
   --color-border:#003366;
-  --color-text: #FFFFFF;
-  --color-text-hover: #FFFFFF;
-  --color-text-second: #6495ED;
+  --color-text: #4DA8DA;
+  --color-text-hover: #c6e6f9;
+  --color-button:#005EB8;
+  --color-button-hover:#338FB3;
+  --color-button-text:#aad2e8;
+  --color-button-text-hover: ;
+
+
+
+
+  --color-background-element: #003366;
   --color-link: #4DA8DA;
   --color-navbars: #002855;
   --color-navbars-text: #FFFFFF;
   --color-navbars-border: #003366;
-  --color-button:#4DA8DA;
-  --color-button-hover:#338FB3;
-  --color-button-text:#003366;
-  --color-button-text-hover:#003366;
-  --color-shadow: white;
+  --color-shadow: #4DA8DA;
 }
 
 html[data-theme="light"] {
   --color-background: #FFFFFF;
-  --color-background-section: #F5F5F5;
   --color-border:#333333;
   --color-text: #333333;
-  --color-text-hover: #4DA8DA;
+  --color-text-hover: #005EB8;
+  --color-button:#FFFFFF;
+  --color-button-hover:#005EB8;
+  --color-button-text:#005EB8;
+  --color-button-text-hover:#FFFFFF;
+
+
+
+
+  --color-background-section: #F5F5F5;
   --color-text-second: #666666;
   --color-link: #005EB8;
   --color-navbars: #FFFFFF;
   --color-navbars-text: #333333;
   --color-navbars-border: #333333;
-  --color-button:#005EB8;
-  --color-button-hover:#004080;
-  --color-button-text:#FFFFFF;
-  --color-button-text-hover:#FFFFFF;
   --color-shadow: black;
 }
 

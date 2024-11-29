@@ -68,10 +68,10 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
             width={70}
             className={`w-full max-w-[100px] h-full drop-shadowanimate ${
               theme === "light"
-                ? "drop-shadow-[1.5px_1.5px_1.5px_white]"
-                : "drop-shadow-[1.5px_1.5px_1.5px_]"
+                ? "dropshadow-[1px_1px_1px_black]"
+                : "dropshadow-[1px_1px_1px_white]"
             }`}
-            src={`https://github.com/BPM94/TTMD/raw/main/timeitLogoGreen.png`}
+            src={`https://github.com/BPM94/TTMD/raw/main/timeitLogoBlue.png`}
             alt=""
           />
         </div>
@@ -89,7 +89,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
       <div id="asideTop" className="flex flex-col gap-4 p-3 w-full h-full bgrose-300">
         {asideOptions.map((option) => (
           <Link
-            className={`no-underline flex px-4 py-3 gap-3 ${
+            className={` flex px-4 py-3 gap-3 ${
               asideSelectedOption === option.name
                 ? "bg-[--color-background-hover] text-[--color-text-hover]"
                 : ""
@@ -101,7 +101,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
           >
             <div className="flex justify-center items-center">{option.icon}</div>
             <label
-              className="cursor-pointer text-base"
+              className="cursor-pointer text-sm font-bold"
               htmlFor={`link-${option.name}`}
             >
               {option.name}
