@@ -56,7 +56,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
     <aside
       className={`${
         isAsideOpen ? "visible" : "hidden"
-      } select-none h-full z-[2000] absolute w-[80%] max-w-[400px] items-center bggreen-300 flex flex-col border-r border-[--color-border] bg-[--color-background] justify-between`}
+      } select-none h-full z-[2000] absolute w-[80%] max-w-[400px]  items-center bggreen-300 flex flex-col  border-r border-[--color-border] bg-[--color-background] justify-between py-4 `}
     >
       <div
         id="asideHead"

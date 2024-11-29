@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html[data-theme="dark"] {
-  --color-background: #000030;
+  --color-background: #000020;
   --color-background-section: #003366;
   --color-border:#003366;
   --color-text: #FFFFFF;

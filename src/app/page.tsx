@@ -26,7 +26,7 @@ export default function Home() {
         muted
       >
         
-        <source src="https://github.com/BPM94/TTMD/raw/main/LoginVideo.webm" type="video/webm" />
+        <source src="https://github.com/BPM94/TTMD/raw/main/videoLogin.mp4" type="video/webm" />
       </video>
       <div className="w[60%] maxw-[350px] flex flex-col py-8 px-16 gap-4 h[500px] bg-[--color-background]/1 backdrop-blurmd z-[2] justify-center items-center rounded-md">
         <div className=" flex justify-center items-center">

@@ -40,17 +40,112 @@ const typeClients = [
   },
 ]
 
+
+const clientsTest = [
+  {
+    id: 0,
+    name: "John Doe",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm"
+  },
+  {
+    id: 1,
+    name: "Capi Tanazo",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm"
+  },
+  {
+    id: 2,
+    name: "Cabiz Bajo",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm"
+  },
+  {
+    id: 3,
+    name: "Elza Pato",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm"
+  },
+  {
+    id: 4,
+    name: "Cabe Zota",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm"
+  },
+  {
+    id: 5,
+    name: "Pedro Perez",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm"
+  },
+  {
+    id: 6,
+    name: "Pacha Mama",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm"
+  },
+
+]
+
 const Clients = () => {
   const [currentClients, setCurrentClients] = useState<string | null>(null);
 
   return (
     <div className="flex flex-col w-[90%] place-self-center mt-5 gap-4">
-      <div className="flex flex-col bggreen-400 place-self-start ">
-        <div className="flex">
+      <div className="flex flex-col bggreen-400 place-self-start w-[320px] ">
+        <div className="flex w-full">
           {
             typeClients.map((client, index) => (
-              <div
-                className={`select-none ${index === 0 ? "rounded-tl-md" : index === typeClients.length - 1 ? "rounded-tr-md" : ""} flex flex-col items-center justify-center bgpink-500 w-[75px] h-[80px] cursor-pointer border border-b-0 border-[--color-border] ${currentClients === client.name ? "bg-[--color-background-hover] text-[--color-text-hover]" : ""} text-base `}
+              <div className={`select-none ${index === 0 ? "rounded-tl-md border-r-0" : index === typeClients.length - 1 ? "rounded-tr-md" : ""} ${index === typeClients.length - 1 ? "border-r" : ""} flex flex-col items-center justify-center bgpink-500 w-full h-[80px] cursor-pointer border-t border-l border-b-0 border-[--color-border] ${currentClients === client.name ? "bg-[--color-background-hover] text-[--color-text-hover]" : ""} text-base `}
                 key={client.name}
                 onClick={() => setCurrentClients(client.name)}
               >
@@ -60,179 +155,51 @@ const Clients = () => {
             ))
           }
         </div>
-        <div className="w-[300px] h-[50px] bgpurple-400 flex justify-center p-2 items-center rounded-b-md border-[--color-border] border bgblue-400">
+        
+
+        <div className="w-full h-[50px] bgpurple-400 flex justify-center p-2 items-center rounded-b-md border-[--color-border] border bgblue-400">
           <div tabIndex={0} className="flex h-full w-full rounded-lg border-2 border-[--color-border]">
-          <input type="text" className="w-full  bg[--color-button]  text-[--color-text] p-1 outline-none rounded-l-md" />
-          <div className="flex h-full w-[40px] justify-center border-l border-l-[--color-border] items-center bgred-600 hover:bg-red-500 rounded-r-md cursor-pointer hover:outline-2 hover:outline-red-500">
-            <FaSearch className="text-2xl " />
-          </div>
+            <input type="text" className="w-full  bg[--color-button]  text-[--color-text] p-1 outline-none rounded-l-md" />
+            <div className="flex h-full w-[40px] justify-center border-l border-l-[--color-border] items-center bgred-600 hover:bg-red-500 rounded-r-md cursor-pointer hover:outline-2 hover:outline-red-500">
+              <FaSearch className="text-2xl " />
+            </div>
           </div>
         </div>
+
+
       </div>
-      <div className="flex  max-h-[500px] w-full bg-[--color-background-2] place-self-center rounded-md border border-[--color-border] overflow-y-auto p-4">
-        <div className="grid max-md:place-content-center md:grid-cols-2 lg:grid-cols-3  gap-6 w-full h-full bgred-300">
-        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
-          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
-            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
-            <div className='flex flex-col w-full'>
-              <h1>MrMonkaDonk</h1>
-              <h1>Seras Victoria Seras Eterna</h1>
-              <h2>zambranomnk@gmail.com</h2>
-              <h2>+58 412 3456 789</h2>
-            </div>
-          </CardHeader>
-          <CardBody className=''>
-            <h3>Subscription: Yoga</h3>
-            <h3>Plans: Monthly</h3>
-            <h3>Schedules: 3PM-7PM</h3>
-          </CardBody>
-          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <RiCalendarScheduleFill className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaUserPen className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaBan className="text-lg" />
-            </div>
-          </CardFooter>
-        </Card>
-        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
-          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
-            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
-            <div className='flex flex-col w-full'>
-              <h1>MrMonkaDonk</h1>
-              <h1>Seras Victoria Seras Eterna</h1>
-              <h2>zambranomnk@gmail.com</h2>
-              <h2>+58 412 3456 789</h2>
-            </div>
-          </CardHeader>
-          <CardBody className=''>
-            <h3>Subscription: Yoga</h3>
-            <h3>Plans: Monthly</h3>
-            <h3>Schedules: 3PM-7PM</h3>
-          </CardBody>
-          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <RiCalendarScheduleFill className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaUserPen className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaBan className="text-lg" />
-            </div>
-          </CardFooter>
-        </Card>
-        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
-          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
-            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
-            <div className='flex flex-col w-full'>
-              <h1>MrMonkaDonk</h1>
-              <h1>Seras Victoria Seras Eterna</h1>
-              <h2>zambranomnk@gmail.com</h2>
-              <h2>+58 412 3456 789</h2>
-            </div>
-          </CardHeader>
-          <CardBody className=''>
-            <h3>Subscription: Yoga</h3>
-            <h3>Plans: Monthly</h3>
-            <h3>Schedules: 3PM-7PM</h3>
-          </CardBody>
-          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <RiCalendarScheduleFill className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaUserPen className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaBan className="text-lg" />
-            </div>
-          </CardFooter>
-        </Card>
-        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
-          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
-            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
-            <div className='flex flex-col w-full'>
-              <h1>MrMonkaDonk</h1>
-              <h1>Seras Victoria Seras Eterna</h1>
-              <h2>zambranomnk@gmail.com</h2>
-              <h2>+58 412 3456 789</h2>
-            </div>
-          </CardHeader>
-          <CardBody className=''>
-            <h3>Subscription: Yoga</h3>
-            <h3>Plans: Monthly</h3>
-            <h3>Schedules: 3PM-7PM</h3>
-          </CardBody>
-          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <RiCalendarScheduleFill className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaUserPen className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaBan className="text-lg" />
-            </div>
-          </CardFooter>
-        </Card>
-        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
-          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
-            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
-            <div className='flex flex-col w-full'>
-              <h1>MrMonkaDonk</h1>
-              <h1>Seras Victoria Seras Eterna</h1>
-              <h2>zambranomnk@gmail.com</h2>
-              <h2>+58 412 3456 789</h2>
-            </div>
-          </CardHeader>
-          <CardBody className=''>
-            <h3>Subscription: Yoga</h3>
-            <h3>Plans: Monthly</h3>
-            <h3>Schedules: 3PM-7PM</h3>
-          </CardBody>
-          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <RiCalendarScheduleFill className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaUserPen className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaBan className="text-lg" />
-            </div>
-          </CardFooter>
-        </Card>
-        <Card className='w-full max-w-[400px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]'>
-          <CardHeader className='flex gap-[10%]  justify-center  rounded-md P-4'>
-            <Image className='rounded-full w-[150px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
-            <div className='flex flex-col w-full'>
-              <h1>MrMonkaDonk</h1>
-              <h1>Seras Victoria Seras Eterna</h1>
-              <h2>zambranomnk@gmail.com</h2>
-              <h2>+58 412 3456 789</h2>
-            </div>
-          </CardHeader>
-          <CardBody className=''>
-            <h3>Subscription: Yoga</h3>
-            <h3>Plans: Monthly</h3>
-            <h3>Schedules: 3PM-7PM</h3>
-          </CardBody>
-          <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <RiCalendarScheduleFill className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaUserPen className="text-lg" />
-            </div>
-            <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-              <FaBan className="text-lg" />
-            </div>
-          </CardFooter>
-        </Card>
+      <div className="flex  max-h-[500px] w-full bgblue-400 place-self-center rounded-md border border-[--color-border] overflow-y-auto p-2">
+        <div className="grid place-content-center place-items-center md:grid-cols-2 xl:grid-cols-3  p-2 gap-6 w-full h-full bgred-300">
+          {
+            clientsTest.map((client) => (
+              <Card className='w-full max-w-[350px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]' key={client.id}>
+                <CardHeader className='flex gap-4  justify-center  rounded-md p-4 bgred-300'>
+                  <Image className='rounded-full w-[120px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
+                  <div className='flex flex-col w-full'>
+                    <h1>{client.name}</h1>
+                    <h2>{client.email}</h2>
+                    <h2>{client.phone}</h2>
+                  </div>
+                </CardHeader>
+                <CardBody className=''>
+                  <h3>Subscription: {client.suscription}</h3>
+                  <h3>Plans: {client.plan}</h3>
+                  <h3>Schedules: {client.schedules}</h3>
+                </CardBody>
+                <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
+                  <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+                    <RiCalendarScheduleFill className="text-lg" />
+                  </div>
+                  <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+                    <FaUserPen className="text-lg" />
+                  </div>
+                  <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
+                    <FaBan className="text-lg" />
+                  </div>
+                </CardFooter>
+              </Card>
+            ))
+          }
         </div>
       </div>
     </div>
