@@ -165,9 +165,9 @@ const Clients = () => {
       <div className="w-full  sticky top-0 z-[100] bg-[--color-background] bgpurple-400 flex justify-center p-2 py-6 items-center  border-b border-b-[--color-border] bgblue-400">
           <div tabIndex={0} className="flex  w-full max-w-[400px] bggreen-400rounded-md ">
             <div className="flex w-full ">
-              <input type="text" className="w-full pl-2 bgred-400 bg-[--color-background]  text-[--color-text] p-1 outline-none rounded-l-md border border-[--color-border] border-r-0" />
+              <input type="text" className="w-full pl-2 bgred-400 bg-[--color-background]  text-[--color-text] p-1 outline-none rounded-l-md border border-[--color-input-border] border-r-0" />
             </div>
-            <div className="flex h-full p-2 justify-center  items-center bgpink-600 hover:text-[--color-text-hover] rounded-r-md cursor-pointer border border-[--color-border] ">
+            <div className="flex h-full p-2 justify-center  items-center bgpink-600 hover:text-[--color-text-hover] rounded-r-md cursor-pointer border border-[--color-input-border] ">
               <FaSearch className="text-2xl " />
             </div>
           </div>
@@ -178,13 +178,13 @@ const Clients = () => {
               <Card className='w-full max-w-[350px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]' key={client.id}>
                 <CardHeader className='flex gap-4  justify-center  rounded-md p-4 bgred-300'>
                   <Image className='rounded-full w-[120px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
-                  <div className='flex flex-col w-full'>
+                  <div className='flex flex-col w-full text-[--color-text-primary]'>
                     <h1>{client.name}</h1>
                     <h2>{client.email}</h2>
                     <h2>{client.phone}</h2>
                   </div>
                 </CardHeader>
-                <CardBody className=''>
+                <CardBody className='text-[--color-text-secondary]'>
                   <h3>Subscription: {client.suscription}</h3>
                   <h3>Plans: {client.plan}</h3>
                   <h3>Schedules: {client.schedules}</h3>

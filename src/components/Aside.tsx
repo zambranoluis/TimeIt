@@ -123,7 +123,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
           className="flex items-center bgred-300 justify-center p-4 gap-3 hover:text-[--color-text-hover] cursor-pointer"
         >
           <FaPowerOff className="text-xl cursor-pointer" />
-          <label className="text-sm cursor-pointer">LOGOUT</label>
+          <label className="text-sm cursor-pointer font-bold">LOGOUT</label>
         </div>
       </div>
       <div
