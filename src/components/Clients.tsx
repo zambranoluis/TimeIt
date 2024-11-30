@@ -4,6 +4,8 @@ import React, { useState } from "react";
 
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 
+import {Tooltip} from "@nextui-org/tooltip";
+
 import {Image} from "@nextui-org/image";
 
 
@@ -53,7 +55,9 @@ const clientsTest = [
     role: "User",
     suscription: "Personal Trainning",
     plan: "Monthly",
-    schedules: "Mon-Fri 3pm-5pm"
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
   },
   {
     id: 1,
@@ -66,7 +70,9 @@ const clientsTest = [
     role: "User",
     suscription: "Personal Trainning",
     plan: "Monthly",
-    schedules: "Mon-Fri 3pm-5pm"
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
   },
   {
     id: 2,
@@ -79,7 +85,9 @@ const clientsTest = [
     role: "User",
     suscription: "Personal Trainning",
     plan: "Monthly",
-    schedules: "Mon-Fri 3pm-5pm"
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
   },
   {
     id: 3,
@@ -92,7 +100,9 @@ const clientsTest = [
     role: "User",
     suscription: "Personal Trainning",
     plan: "Monthly",
-    schedules: "Mon-Fri 3pm-5pm"
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
   },
   {
     id: 4,
@@ -105,7 +115,9 @@ const clientsTest = [
     role: "User",
     suscription: "Personal Trainning",
     plan: "Monthly",
-    schedules: "Mon-Fri 3pm-5pm"
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
   },
   {
     id: 5,
@@ -118,7 +130,9 @@ const clientsTest = [
     role: "User",
     suscription: "Personal Trainning",
     plan: "Monthly",
-    schedules: "Mon-Fri 3pm-5pm"
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
   },
   {
     id: 6,
@@ -131,7 +145,84 @@ const clientsTest = [
     role: "User",
     suscription: "Personal Trainning",
     plan: "Monthly",
-    schedules: "Mon-Fri 3pm-5pm"
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
+  },
+  {
+    id: 7,
+    name: "Presta Mista",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
+  },
+  {
+    id: 8,
+    name: "Membre Sia",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm",
+    active: true,
+    banned: false,
+  },
+  {
+    id: 9,
+    name: "Cala Vera",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm",
+    active: false,
+    banned:false
+  },
+  {
+    id: 10,
+    name: "Maizpi Lao",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm",
+    active: false,
+    banned:false
+  },
+  {
+    id: 11,
+    name: "Cris Tofer",
+    email: "y7h5y@example.com",
+    phone: "+58 412 3456 789",
+    avatar: "https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp",
+    status: "Active",
+    lastLogin: "2023-06-01T12:34:56Z",
+    role: "User",
+    suscription: "Personal Trainning",
+    plan: "Monthly",
+    schedules: "Mon-Fri 3pm-5pm",
+    active: false,
+    banned:true
   },
 
 ]
@@ -145,7 +236,7 @@ const Clients = () => {
         <div className="flex w-full">
           {
             typeClients.map((client, index) => (
-              <div className={`select-none ${index === 0 ? "rounded-l-md border-r-0" : index === typeClients.length - 1 ? "rounded-r-md" : ""} ${index === typeClients.length - 1 ? "border-r" : ""} flex flex-col items-center justify-center bgpink-500 w-full h-[80px] cursor-pointer border-t border-l border-b border-[--color-border] ${currentClients === client.name ? "bg-[--color-background-hover] text-[--color-text-hover]" : ""} text-base `}
+              <div className={`select-none font-bold ${index === 0 ? "rounded-l-md border-r-0" : index === typeClients.length - 1 ? "rounded-r-md" : ""} ${index === typeClients.length - 1 ? "border-r" : ""} flex flex-col items-center justify-center bgpink-500 w-full h-[80px] cursor-pointer border-t border-l border-b border-[--color-border] ${currentClients === client.name ? "bg-[--color-background-selected] text-[--color-button-text-hover]" : ""} text-base `}
                 key={client.name}
                 onClick={() => setCurrentClients(client.name)}
               >
@@ -172,13 +263,13 @@ const Clients = () => {
             </div>
           </div>
         </div>
-        <div className="grid place-content-center place-items-center md:grid-cols-2 xl:grid-cols-3  p-2 py-8 gap-6 w-full h-full bgred-300">
+        <div className="grid place-content-center place-items-center md:grid-cols-2 xl:grid-cols-3  p-2 py-16 gap-6 w-full h-full bgred-300">
           {
             clientsTest.map((client) => (
-              <Card className='w-full max-w-[350px] h-[320px] p-4 bg-[--color-background] shadow shadow-[--color-shadow]' key={client.id}>
+              <Card className='w-full max-w-[350px] h-[320px] p-4 bg-[--color-background] border border-[--color-border]' key={client.id}>
                 <CardHeader className='flex gap-4  justify-center  rounded-md p-4 bgred-300'>
                   <Image className='rounded-full w-[120px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
-                  <div className='flex flex-col w-full text-[--color-text-primary]'>
+                  <div className='flex flex-col w-full font-bold   text-[--color-text-primary]'>
                     <h1>{client.name}</h1>
                     <h2>{client.email}</h2>
                     <h2>{client.phone}</h2>
@@ -189,16 +280,22 @@ const Clients = () => {
                   <h3>Plans: {client.plan}</h3>
                   <h3>Schedules: {client.schedules}</h3>
                 </CardBody>
-                <CardFooter className='flex justify-end  bgblue-400 gap-2 text-[--color-text-hover]'>
-                  <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md border border-[--color-border]'>
-                    <RiCalendarScheduleFill className="text-lg text-[--color-button-text]" />
-                  </div>
-                  <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-                    <FaUserPen className="text-lg text-[--color-button-text]" />
-                  </div>
-                  <div className='flex  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md'>
-                    <FaBan className="text-lg text-[--color-button-text]" />
-                  </div>
+                <CardFooter className='flex justify-end  bgblue-400 gap-2  '>
+                  <Tooltip content="View Assistance Calendar">
+                    <div className='flex hover:text-[--color-button-text-hover]  text-[--color-button-text]  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md border border-[--color-border]'>
+                      <RiCalendarScheduleFill className="text-lg " />
+                    </div>
+                  </Tooltip>
+                  <Tooltip content="Edit Client">
+                    <div className='flex hover:text-[--color-button-text-hover]  text-[--color-button-text] bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md border border-[--color-border]'>
+                      <FaUserPen className="text-lg " />
+                    </div>
+                  </Tooltip>
+                  <Tooltip content="Ban Client">
+                    <div className='flex hover:text-[--color-button-text-hover] text-[--color-button-text]  bggreen-400 cursor-pointer bg-[--color-button] hover:bg-[--color-button-hover] p-2 rounded-md border border-[--color-border]'>
+                      <FaBan className="text-lg " />
+                    </div>
+                  </Tooltip>
                 </CardFooter>
               </Card>
             ))

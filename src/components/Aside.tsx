@@ -91,7 +91,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
           <Link
             className={` flex px-4 py-3 gap-3 ${
               asideSelectedOption === option.name
-                ? "bg-[--color-background-hover] text-[--color-text-hover]"
+                ? "bg-[--color-button-hover] text-[--color-button-text-hover]"
                 : ""
             } w-full items-center hover:bg-[--color-button-hover] cursor-pointer hover:text-[--color-button-text-hover] transition-colors duration-300 rounded-full`}
             key={option.name}

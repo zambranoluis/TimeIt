@@ -22,11 +22,11 @@ const ProfileClient = () => {
         </video>
       </div>
       <div id="socials" className="absolute z-[150] flex  top-[20px] right-[20px] bgred-300 gap-4">
-        <Link href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialFacebook className="text-2xl"/></Link>
-        <Link href="https://www.instagram.com/thefitclubmcbo/" target="_blank" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialInstagram className="text-2xl"/></Link>
-        <Link href="#" className={` shadow-[--color-shadow] .buttonHover p-3 border shadow-sm  bg-[--color-background] text-[--color-text]  rounded-xl flex`}><SlSocialYoutube className="text-2xl"/></Link>
+        <Link href="#" className={`  p-3 bg-[--color-background] border border-[--color-border] text-[--color-text]  rounded-xl flex`}><SlSocialFacebook className="text-2xl"/></Link>
+        <Link href="https://www.instagram.com/thefitclubmcbo/" target="_blank" className={` p-3 bg-[--color-background] border border-[--color-border] text-[--color-text]  rounded-xl flex`}><SlSocialInstagram className="text-2xl"/></Link>
+        <Link href="#" className={` p-3 bg-[--color-background] border border-[--color-border] text-[--color-text]  rounded-xl flex`}><SlSocialYoutube className="text-2xl"/></Link>
       </div>
-      <div id="userInfo" className=" bgred-300 bottom-[20px] absolute z-[150] flex flex-col justify-center items-center  bg-[--color-background] text-[--color-text] gap-4 p-4 rounded-xl shadow-sm shadow-[--color-shadow]">
+      <div id="userInfo" className=" bgred-300 bottom-[20px] absolute z-[150] flex flex-col justify-center items-center  bg-[--color-background] text-[--color-text] gap-4 p-4 rounded-xl border border-[--color-border]">
         <div id="avatarContainer">
           <Image src="https://github.com/BPM94/TTMD/raw/main/AvatarTimeit.webp" className="rounded-full max-w-[150px]" alt="" />
         </div>
@@ -36,7 +36,7 @@ const ProfileClient = () => {
           <p className="text-xl fontbold">+58 412 3456 789</p>
         </div>
         <div id="buttonsContainer" className="flex gap-2">
-          <button className="bg-[--color-button] text-[--color-background] px-2 py-1 rounded-md hover:bg-[--color-button-hover]">View Suscriptions</button>
+          <button className="bg-[--color-button] text-[--color-button-text] px-2 py-1 rounded-md hover:bg-[--color-button-hover] hover:text-[--color-button-text-hover] border border-[--color-border]">View Suscriptions</button>
           {/* <button className="bg-[--color-button] text-[--color-background] px-2 py-1 rounded-md hover:bg-[--color-button-hover]">Suscribe</button> */}
         </div>
       </div>
