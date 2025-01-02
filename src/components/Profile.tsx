@@ -5,6 +5,8 @@ import { SlSocialFacebook } from "react-icons/sl";
 import { SlSocialInstagram } from "react-icons/sl";
 import { SlSocialYoutube } from "react-icons/sl";
 
+
+
 import Link from "next/link";
 
 
@@ -36,7 +38,7 @@ const ProfileClient = () => {
           <p className="text-xl fontbold">+58 412 3456 789</p>
         </div>
         <div id="buttonsContainer" className="flex gap-2">
-          <button className="bg-[--color-button] text-[--color-button-text] px-2 py-1 rounded-md hover:bg-[--color-button-hover] hover:text-[--color-button-text-hover] border border-[--color-border]">View Suscriptions</button>
+          {/* <button className="bg-[--color-button] text-[--color-button-text] px-2 py-1 rounded-md hover:bg-[--color-button-hover] hover:text-[--color-button-text-hover] border border-[--color-border]">View Suscriptions</button> */}
           {/* <button className="bg-[--color-button] text-[--color-background] px-2 py-1 rounded-md hover:bg-[--color-button-hover]">Suscribe</button> */}
         </div>
       </div>

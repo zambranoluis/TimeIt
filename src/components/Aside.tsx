@@ -22,10 +22,10 @@ interface Option {
 }
 
 const asideOptions: Option[] = [
-  { name: "PROFILE", path: "/dashboard/profile", icon: <FaUser className="text-2xl" /> },
+  { name: "Profile", path: "/dashboard/profile", icon: <FaUser className="text-2xl" /> },
   { name: "CLIENTS", path: "/dashboard/clients", icon: <FaUsers className="text-2xl" /> },
-  { name: "CALENDAR", path: "/dashboard/calendar", icon: <FaCalendarAlt className="text-2xl" /> },
-  { name: "PAYMENTS", path: "/dashboard/payments", icon: <SiCashapp className="text-2xl" /> },
+  // { name: "CALENDAR", path: "/dashboard/calendar", icon: <FaCalendarAlt className="text-2xl" /> },
+  // { name: "PAYMENTS", path: "/dashboard/payments", icon: <SiCashapp className="text-2xl" /> },
 ];
 
 const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
@@ -78,8 +78,8 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
         <div className="flex bggreen-300 justify-center items-center w-[30%] py-3">
           <GiHamburgerMenu
             className="text-2xl cursor-pointer transition-colors duration-300 hover:text-[--color-text-hover]"
-            onClick={(e) => {
-              e.preventDefault();
+            onClick={() => {
+              
               toggleAside();
             }}
           />
@@ -113,8 +113,8 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
       <div
         id="asideBottom"
         className="flex flex-col px-6 text-[--color-text]"
-        onClick={(e) => {
-          e.preventDefault();
+        onClick={() => {
+          
           window.location.href = "/";
         }}
       >

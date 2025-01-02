@@ -2,7 +2,11 @@
 
 import React, { useState } from "react";
 
+import {Tabs, Tab} from "@nextui-org/tabs";
+
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
+
+import {Avatar, AvatarGroup, AvatarIcon} from "@nextui-org/avatar";
 
 import {Tooltip} from "@nextui-org/tooltip";
 
@@ -19,13 +23,14 @@ import { FaSearch } from "react-icons/fa";
 import { RiCalendarScheduleFill } from "react-icons/ri";
 import { FaUserPen } from "react-icons/fa6";
 import { FaBan } from "react-icons/fa";
+import { div } from "framer-motion/client";
 
 
 
 
 const typeClients = [
   {
-    name: "All Users",
+    name: "All Clients",
     icon: <FaUserCheck className="text-2xl"/>
   },
   {
@@ -228,37 +233,26 @@ const clientsTest = [
 ]
 
 const Clients = () => {
-  const [currentClients, setCurrentClients] = useState<string | null>(null);
+  const [currentClients, setCurrentClients] = useState<string | null>("All Clients");
 
   return (
-    <div className="flex flex-col w-[90%] place-self-center mt-5 gap-4 bg-[--color-background]">
-      <div className="flex flex-col bggreen-400 place-self-center w-[320px] ">
-        <div className="flex w-full">
-          {
-            typeClients.map((client, index) => (
-              <div className={`select-none font-bold ${index === 0 ? "rounded-l-md border-r-0" : index === typeClients.length - 1 ? "rounded-r-md" : ""} ${index === typeClients.length - 1 ? "border-r" : ""} flex flex-col items-center justify-center bgpink-500 w-full h-[80px] cursor-pointer border-t border-l border-b border-[--color-border] ${currentClients === client.name ? "bg-[--color-background-selected] text-[--color-button-text-hover]" : ""} text-base `}
-                key={client.name}
-                onClick={() => setCurrentClients(client.name)}
-              >
-                {client.icon}
-                {client.name}
-              </div>
-            ))
-          }
-        </div>
-        
-
-        
-
-
+    <div className="flex flex-col w-[90%] place-self-center mt-5 gap-4 ">
+      <div className="flex  place-self-center border-[--color-border] border rounded-md p-2">
+        {typeClients.map((client, index) => (
+          <div className="flex justify-center items-center" key={index}>
+            <p className={`${currentClients === client.name ? "bg-[--color-text] text-[--color-background] rounded-md" : ""} select-none flex flex-col text-center justify-center items-center p-4 cursor-pointer`} onClick={() => { setCurrentClients(client.name) }} >{client.icon}{client.name}</p>
+          </div>
+        ))
+        }
       </div>
+
       <div className="flex flex-col relative  max-h-[500px] w-full bgblue-400 place-self-center rounded-md border border-[--color-border] overflow-y-auto p-2 pt-0 px-0">
-      <div className="w-full  sticky top-0 z-[100] bg-[--color-background] bgpurple-400 flex justify-center p-2 py-6 items-center  border-b border-b-[--color-border] bgblue-400">
-          <div tabIndex={0} className="flex  w-full max-w-[400px] bggreen-400rounded-md ">
+        <div className="w-full  sticky top-0 z-[100] bg-[--color-background] bgpurple-400 flex justify-center p-2 py-6 items-center  border-b border-b-[--color-border] bgblue-400">
+          <div className="flex  w-full max-w-[400px] bggreen-400rounded-md ">
             <div className="flex w-full ">
               <input type="text" className="w-full pl-2 bgred-400 bg-[--color-background]  text-[--color-text] p-1 outline-none rounded-l-md border border-[--color-input-border] border-r-0" />
             </div>
-            <div className="flex h-full p-2 justify-center  items-center bgpink-600 hover:text-[--color-text-hover] rounded-r-md cursor-pointer border border-[--color-input-border] ">
+            <div className="flex h-full p-2 justify-center  items-center bgpink-600 hover:text-[--color-background] rounded-r-md cursor-pointer hover:bg-[--color-text]  border border-[--color-input-border] ">
               <FaSearch className="text-2xl " />
             </div>
           </div>
@@ -268,7 +262,9 @@ const Clients = () => {
             clientsTest.map((client) => (
               <Card className='w-full max-w-[350px] h-[320px] p-4 bg-[--color-background] border border-[--color-border]' key={client.id}>
                 <CardHeader className='flex gap-4  justify-center  rounded-md p-4 bgred-300'>
-                  <Image className='rounded-full w-[120px]' src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" alt="" />
+                  <div>
+                    <Avatar src="https://github.com/BPM94/TTMD/raw/main/avatarAang.jpg" className="w-20 h-20 " />
+                  </div>
                   <div className='flex flex-col w-full font-bold   text-[--color-text-primary]'>
                     <h1>{client.name}</h1>
                     <h2>{client.email}</h2>

@@ -4,6 +4,8 @@
 
 /* #80CBC4 */
 
+
+
 html[data-theme="dark"] {
   --color-background: #000020;
   --color-background-selected: #80CBC4;

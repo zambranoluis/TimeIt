@@ -20,7 +20,7 @@ export default function RootLayout({
         <link rel='icon' href='https://github.com/BPM94/TTMD/raw/main/calendarioFavIcon.png' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </head>
-      <body className="h-[100dvh] w-[100dvw]"
+      <body className="antialiased h-[100dvh] w-[100dvw]"
       >
         {children}
       </body>
