@@ -240,7 +240,7 @@ const Clients = () => {
       <div className="flex  place-self-center border-[--color-border] border rounded-md p-2">
         {typeClients.map((client, index) => (
           <div className="flex justify-center items-center" key={index}>
-            <p className={`${currentClients === client.name ? "bg-[--color-text] text-[--color-background] rounded-md" : ""} select-none flex flex-col text-center justify-center items-center p-4 cursor-pointer`} onClick={() => { setCurrentClients(client.name) }} >{client.icon}{client.name}</p>
+            <p className={`${currentClients === client.name ? "bg-[--color-text] text-[--color-background] rounded-md" : ""} select-none flex flex-col text-center justify-center items-center p-4 cursor-pointer whitespace-nowrap `} onClick={() => { setCurrentClients(client.name) }} >{client.icon}{client.name}</p>
           </div>
         ))
         }
