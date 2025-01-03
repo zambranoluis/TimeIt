@@ -19,7 +19,7 @@ function Page() {
             <h1 className="font-bold ">The Fit Club: <span className="font-light">Personal Training</span></h1>
           </div>
         </div>
-        <div className="flex flex-col p-4 gap-2">
+        <div className="flex flex-col p-4 gap-2 max-w-[500px]">
           <div className="flex">
             <h2 className="bg-[--color-background2] p-2 rounded-sm text-[--color-text2]">Location: </h2>
           </div>
@@ -27,7 +27,7 @@ function Page() {
             <p className="">Calle 1 # 2 - 3</p>
           </div>
         </div>
-        <div className="flex flex-col p-4 gap-2">
+        <div className="flex flex-col p-4 gap-2 max-w-[500px]">
           <div className="flex">
             <h2 className="bg-[--color-background2] p-2 rounded-sm text-[--color-text2]">Schedule: </h2>
           </div>
@@ -41,7 +41,7 @@ function Page() {
             
           </div>
         </div>
-        <div className="flex flex-col p-4 gap-2">
+        <div className="flex flex-col p-4 gap-2 max-w-[500px]">
           <div className="flex">
             <h2 className="bg-[--color-background2] p-2 rounded-sm text-[--color-text2]">Available days: </h2>
           </div>
