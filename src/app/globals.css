@@ -8,6 +8,8 @@
 
 html[data-theme="dark"] {
   --color-background: #000020;
+  --color-background2: #003366;
+  --color-background3: ;
   --color-background-selected: #80CBC4;
   --color-border:#003366;
   --color-text: #37b2f9;
@@ -16,7 +18,7 @@ html[data-theme="dark"] {
   --color-text-hover: #c6e6f9;
   /* --color-text-hover: #c6e6f9; */
   --color-button:#005EB8;
-  --color-button-hover:#80CBC4;
+  --color-button-hover:#37b2f9;
   --color-button-text:#c6e6f9;
   --color-button-text-hover: #003366;
   --color-input: ;

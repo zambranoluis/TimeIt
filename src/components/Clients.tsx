@@ -12,6 +12,8 @@ import {Tooltip} from "@nextui-org/tooltip";
 
 import {Image} from "@nextui-org/image";
 
+import { IoPersonAdd } from "react-icons/io5";
+
 
 import { FaUserCheck } from "react-icons/fa";
 import { FaUserClock } from "react-icons/fa";
@@ -31,19 +33,19 @@ import { div } from "framer-motion/client";
 const typeClients = [
   {
     name: "All Clients",
-    icon: <FaUserCheck className="text-2xl"/>
+    icon: <FaUserCheck className=""/>
   },
   {
     name: "Active",
-    icon: <FaUserClock className="text-2xl"/>
+    icon: <FaUserClock className=""/>
   },
   {
     name: "Inactive",
-    icon: <FaUserTimes className="text-2xl"/>
+    icon: <FaUserTimes className=""/>
   },
   {
     name: "Banned",
-    icon: <FaUserAltSlash className="text-2xl"/>
+    icon: <FaUserAltSlash className=""/>
   },
 ]
 
@@ -237,20 +239,23 @@ const Clients = () => {
 
   return (
     <div className="flex flex-col w-[90%] place-self-center mt-5 gap-4 ">
-      <div className="flex  place-self-center border-[--color-border] border rounded-md p-2">
+      <div className="flex  place-self-center border-[--color-border] border rounded-md p-2 max-sm:w-[90%] overflow-x-scroll scrollbar-hide">
         {typeClients.map((client, index) => (
-          <div className="flex justify-center items-center" key={index}>
-            <p className={`${currentClients === client.name ? "bg-[--color-text] text-[--color-background] rounded-md" : ""} select-none flex flex-col text-center justify-center items-center p-4 cursor-pointer whitespace-nowrap `} onClick={() => { setCurrentClients(client.name) }} >{client.icon}{client.name}</p>
+          <div className="flex justify-center items-center " key={index}>
+            <p className={`${currentClients === client.name ? "bg-[--color-text] text-[--color-background] rounded-md" : ""} select-none flex flex-col text-center justify-center items-center p-4 cursor-pointer whitespace-nowrap text-[xs] `} onClick={() => { setCurrentClients(client.name) }} >{client.icon}{client.name}</p>
           </div>
         ))
         }
       </div>
 
       <div className="flex flex-col relative  max-h-[500px] w-full bgblue-400 place-self-center rounded-md border border-[--color-border] overflow-y-auto p-2 pt-0 px-0">
-        <div className="w-full  sticky top-0 z-[100] bg-[--color-background] bgpurple-400 flex justify-center p-2 py-6 items-center  border-b border-b-[--color-border] bgblue-400">
+        <div className="w-full  sticky top-0 z-[100] bg-[--color-background] bgpurple-400 flex justify-center p-2 py-6 items-center  border-b border-b-[--color-border] bgblue-400 gap-2">
+          <div className="flex p-2 bg-[--color-button] rounded-md hover:bg-[--color-button-hover] hover:text-[--color-button-text-hover] ">
+            <IoPersonAdd className="text-2xl" />
+          </div>
           <div className="flex  w-full max-w-[400px] bggreen-400rounded-md ">
             <div className="flex w-full ">
-              <input type="text" className="w-full pl-2 bgred-400 bg-[--color-background]  text-[--color-text] p-1 outline-none rounded-l-md border border-[--color-input-border] border-r-0" />
+              <input type="text" className="w-full pl-2 bgred-400 bg-[--color-background]  text-[--color-text] p-1 outline-none rounded-l-md border border-[--color-input-border] border-r-0 max-[450px]:text-xs " />
             </div>
             <div className="flex h-full p-2 justify-center  items-center bgpink-600 hover:text-[--color-background] rounded-r-md cursor-pointer hover:bg-[--color-text]  border border-[--color-input-border] ">
               <FaSearch className="text-2xl " />
