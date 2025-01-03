@@ -24,7 +24,8 @@ interface Option {
 const asideOptions: Option[] = [
   { name: "Profile", path: "/dashboard/profile", icon: <FaUser className="text-2xl" /> },
   { name: "CLIENTS", path: "/dashboard/clients", icon: <FaUsers className="text-2xl" /> },
-  // { name: "CALENDAR", path: "/dashboard/calendar", icon: <FaCalendarAlt className="text-2xl" /> },
+  { name: "SUBSCRIPTION", path: "/dashboard/subscription", icon: <FaCalendarAlt className="text-2xl" /> },
+  // { name: "CALENDAR", path: "/dashboard/calendar", icon:  },
   // { name: "PAYMENTS", path: "/dashboard/payments", icon: <SiCashapp className="text-2xl" /> },
 ];
 

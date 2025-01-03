@@ -28,8 +28,8 @@ const Navbar: React.FC<NavbarProps> = ( { toggleAside } ) => {
       </div>
       <div className="flex gap-3 sm:gap-6 bgblue-300">
         <div className="flex    justify-center items-center cursor-pointer transition-colors duration-300 ">
-          <p className="select-none text-xs">ES</p>
-          <Image className="h-[15px] w-[18px] select-none ml-1 " src="https://github.com/BPM94/TTMD/raw/main/flags/es.png" alt="" />
+          <p className="select-none text-xs">EN</p>
+          <Image className="h-[15px] w-[18px] select-none ml-1 " src="/unitedstates.png" alt="" />
           <TiArrowSortedDown className="text-xl bgred-300 hover:text-[--color-text-hover] " />
         </div>
         {theme === "light"

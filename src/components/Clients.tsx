@@ -239,7 +239,7 @@ const Clients = () => {
 
   return (
     <div className="flex flex-col w-[90%] place-self-center mt-5 gap-4 ">
-      <div className="flex  place-self-center border-[--color-border] border rounded-md p-2 max-sm:w-[90%] overflow-x-scroll scrollbar-hide">
+      <div className="flex  place-self-center border-[--color-border] border rounded-md p-2 max-[450px]:w-[90%] overflow-x-scroll scrollbar-hide">
         {typeClients.map((client, index) => (
           <div className="flex justify-center items-center " key={index}>
             <p className={`${currentClients === client.name ? "bg-[--color-text] text-[--color-background] rounded-md" : ""} select-none flex flex-col text-center justify-center items-center p-4 cursor-pointer whitespace-nowrap text-[xs] `} onClick={() => { setCurrentClients(client.name) }} >{client.icon}{client.name}</p>
@@ -250,7 +250,7 @@ const Clients = () => {
 
       <div className="flex flex-col relative  max-h-[500px] w-full bgblue-400 place-self-center rounded-md border border-[--color-border] overflow-y-auto p-2 pt-0 px-0">
         <div className="w-full  sticky top-0 z-[100] bg-[--color-background] bgpurple-400 flex justify-center p-2 py-6 items-center  border-b border-b-[--color-border] bgblue-400 gap-2">
-          <div className="flex p-2 bg-[--color-button] rounded-md hover:bg-[--color-button-hover] hover:text-[--color-button-text-hover] ">
+          <div className="flex p-2 bg-[--color-button] rounded-md hover:bg-[--color-button-hover] hover:text-[--color-button-text-hover] cursor-pointer">
             <IoPersonAdd className="text-2xl" />
           </div>
           <div className="flex  w-full max-w-[400px] bggreen-400rounded-md ">
