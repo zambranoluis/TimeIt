@@ -40,7 +40,7 @@ export default function Home() {
                 
               >Email:</label>
               <input
-                className="p-2 rounded-md "
+                className="p-2 rounded-md bg-[#020202]"
                 id="email"
                 type="text"
                 placeholder="Email"
@@ -55,7 +55,7 @@ export default function Home() {
               >Password:</label>
               <div className="flex relative ">
                 <input 
-                  className="p-2  rounded-md" 
+                  className="p-2  rounded-md bg-[#020202]" 
                   id="password" 
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
@@ -74,9 +74,12 @@ export default function Home() {
                 )}
               </div>
             </div>
-            <div className="flex justify-center items-center">
-              <button className="px-4 py-2 bg-green-600 hover:bg-green-800 font-bold rounded-md" onClick={() => {handleLogin()}}>
-                Log In
+            <div className="flex flex-col gap-2 justify-center items-center">
+              <button className="px-4 py-2 bg-[#005EB8] hover:bg-[#37b2f9] font-bold rounded-md" onClick={() => {handleLogin()}}>
+                Log In as User
+              </button>
+              <button className="px-4 py-2 bg-[#005EB8] hover:bg-[#37b2f9] font-bold rounded-md" onClick={() => {handleLogin()}}>
+                Log In as Client
               </button>
             </div>
           </form>
