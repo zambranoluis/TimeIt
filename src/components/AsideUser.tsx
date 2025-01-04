@@ -35,15 +35,17 @@ const asideOptions: Option[] = [
 const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
   const [asideSelectedOption, setAsideSelectedOption] = useState<string | null>(null);
   const { theme } = useTheme();
-  // const router = useRouter(); // Hook de Next.js para acceder al pathname
-  const [isMounted, setIsMounted] = useState(false);
+  
   
   const [currentPath, setCurrentPath] = useState("");
   const pathname = usePathname();
+  
+  const [isMounted, setIsMounted] = useState(true);
+  // setIsMounted(true);
 
   useEffect(() => {
     // Actualiza la ruta actual en base al hook `usePathname`
-    if (pathname) {
+    if (isMounted) {
       setCurrentPath(pathname.toLowerCase());
     }
     const matchedOption = asideOptions.find((option) =>
@@ -54,7 +56,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
     if (matchedOption) {
       setAsideSelectedOption(matchedOption.name);
     }
-  }, [pathname]);
+  }, [isMounted, pathname]);
   
 
 
