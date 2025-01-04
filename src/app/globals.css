@@ -36,7 +36,10 @@ html[data-theme="dark"] {
   --color-navbars: #002855;
   --color-navbars-text: #FFFFFF;
   --color-navbars-border: #003366;
-  --color-shadow: #4DA8DA;
+
+
+  --color-shadow: #012e5b;
+  --color-shadow-hover: #4DA8DA;
 }
 
 html[data-theme="light"] {

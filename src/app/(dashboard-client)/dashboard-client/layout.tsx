@@ -5,9 +5,9 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { useState, ReactNode, useEffect } from "react";
 import { Image } from "@nextui-org/image";
 
-import Navbar from "@/components/NavbarUser";
+import Navbar from "@/components/NavbarClient";
 
-import Aside from "@/components/AsideUser";
+import Aside from "@/components/AsideClient";
 
 interface DashboardLayoutProps {
   children: ReactNode; // Define el tipo para las props de children

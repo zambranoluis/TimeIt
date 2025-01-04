@@ -11,6 +11,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaUser, FaUsers, FaCalendarAlt, FaPowerOff } from "react-icons/fa";
 import { SiCashapp } from "react-icons/si";
 
+import { usePathname } from "next/navigation";
+
 interface AsideProps {
   toggleAside: () => void;
   isAsideOpen: boolean;
@@ -23,36 +25,32 @@ interface Option {
 }
 
 const asideOptions: Option[] = [
-  { name: "Profile", path: "/dashboard/profile", icon: <FaUser className="text-2xl" /> },
-  { name: "CLIENTS", path: "/dashboard/clients", icon: <FaUsers className="text-2xl" /> },
-  { name: "SUBSCRIPTION", path: "/dashboard/subscription", icon: <FaCalendarAlt className="text-2xl" /> },
-  // { name: "CALENDAR", path: "/dashboard/calendar", icon:  },
-  // { name: "PAYMENTS", path: "/dashboard/payments", icon: <SiCashapp className="text-2xl" /> },
+  { name: "TRAINER", path: "/dashboard-client/trainer", icon: <FaUser className="text-2xl" /> },
+  { name: "SUBSCRIPTION", path: "/dashboard-client/subscription", icon: <FaCalendarAlt className="text-2xl" /> },
 ];
 
 const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
-  const [asideSelectedOption, setAsideSelectedOption] = useState<string | null>(null);
   const { theme } = useTheme();
-  // const router = useRouter(); // Hook de Next.js para acceder al pathname
-  const [isMounted, setIsMounted] = useState(false);
+  
+  
+  const [asideSelectedOption, setAsideSelectedOption] = useState<string | null>(null);
+  const [currentPath, setCurrentPath] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
-    setIsMounted(true); // Marcar como montado en el cliente
-
-    if (!isMounted) return;
-
-    const currentPath = window.location.pathname.toLowerCase();
-
-    // Verificar si el pathname incluye alguna de las palabras clave
+    if (pathname) {
+      setCurrentPath(pathname.toLowerCase());
+    }
     const matchedOption = asideOptions.find((option) =>
       currentPath.includes(option.name.toLowerCase())
     );
 
-    // Actualizar el estado si se encuentra una coincidencia
     if (matchedOption) {
       setAsideSelectedOption(matchedOption.name);
     }
-  }, [isMounted]); // Ejecutar después del montaje
+  }, [pathname]);
+  
+
 
   return (
     <aside
