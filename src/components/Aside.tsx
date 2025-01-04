@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
+import React, { ReactElement } from "react";
 // import { useRouter } from "next/navigation"; // Importar desde "next/navigation" en apps con appDir
 import { useTheme } from "../context/ThemeContext";
 import Image from "next/image";
@@ -18,7 +19,7 @@ interface AsideProps {
 interface Option {
   name: string;
   path: string;
-  icon: JSX.Element;
+  icon: ReactElement;
 }
 
 const asideOptions: Option[] = [
