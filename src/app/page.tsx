@@ -75,10 +75,10 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col gap-2 justify-center items-center">
-              <button className="px-4 py-2 bg-[#005EB8] hover:bg-[#37b2f9] font-bold rounded-md" onClick={() => {handleLogin("dashboard")}}>
+              <button className="px-4 py-2 bg-[#005EB8] hover:bg-[#37b2f9] text-white font-bold rounded-md" onClick={() => {handleLogin("dashboard")}}>
                 Log In as User
               </button>
-              <button className="px-4 py-2 bg-[#005EB8] hover:bg-[#37b2f9] font-bold rounded-md" onClick={() => {handleLogin("dashboard-client")}}>
+              <button className="px-4 py-2 bg-[#005EB8] hover:bg-[#37b2f9] text-white font-bold rounded-md" onClick={() => {handleLogin("dashboard-client")}}>
                 Log In as Client
               </button>
             </div>

@@ -89,11 +89,15 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
       <div id="asideTop" className="flex flex-col gap-4 p-3 w-full h-full bgrose-300">
         {asideOptions.map((option) => (
           <Link
-            className={` flex px-4 py-3 gap-3  w-full items-center hover:bg-[--color-button-hover] cursor-pointer hover:text-[--color-button-text-hover] transition-colors duration-300 rounded-full`}
+            className={` flex px-4 py-3 gap-3 ${
+              asideSelectedOption === option.name
+                ? "bg-[--color-button-hover] text-[--color-button-text-hover]"
+                : ""
+            } w-full items-center hover:bg-[--color-button-hover] cursor-pointer hover:text-[--color-button-text-hover] transition-colors duration-300 rounded-full`}
             key={option.name}
             id={`link-${option.name}`}
             href={option.path}
-            onClick={() => setAsideSelectedOption(option.name)}
+            onClick={() => {}}
           >
             <div className="flex justify-center items-center">{option.icon}</div>
             <label

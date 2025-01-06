@@ -105,7 +105,7 @@ const Aside: React.FC<AsideProps> = ({ toggleAside, isAsideOpen }) => {
             key={option.name}
             id={`link-${option.name}`}
             href={option.path}
-            onClick={() => setAsideSelectedOption(option.name)}
+            onClick={() => {}}
           >
             <div className="flex justify-center items-center">{option.icon}</div>
             <label

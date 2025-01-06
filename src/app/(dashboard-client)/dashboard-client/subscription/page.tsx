@@ -46,14 +46,14 @@ function Page() {
             <h2 className="bg-[--color-background2] p-2 rounded-sm text-[--color-text2]">Available Time: </h2>
           </div>
           <div className="flex flex-col gap-1">
-            <div className="flex bgred-300 justify-center items-start bgred-200 h-[350px]">
+            <div className="flex bgred-300 justify-center items-start bgred-200 h-[350px] sm:w-[520px]" >
                 <RangeCalendar
                   className="drop-shadow-[0_1px_2px_var(--color-shadow)] "
                   isReadOnly
                   visibleMonths={2}
                   defaultValue={{
                     start: today(getLocalTimeZone()),
-                    end: today(getLocalTimeZone()).add({months: 2}),
+                    end: today(getLocalTimeZone()).add({months: 1}),
                   }}
                 />
               </div>
