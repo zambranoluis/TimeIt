@@ -27,10 +27,10 @@ const Navbar: React.FC<NavbarProps> = ( { toggleAside } ) => {
         <Image className={`h-[65px] drop-shadowanimate `} src={`${theme === "light"  ? "https://github.com/BPM94/TTMD/raw/main/fitLogoLight.png" : "https://github.com/BPM94/TTMD/raw/main/fitLogoDark.png"}`} alt="" />
       </div>
       <div className="flex gap-3 sm:gap-6 bgblue-300">
-        <div className="flex    justify-center items-center cursor-pointer transition-colors duration-300 ">
+        <div className="flex    justify-center items-center cursor-pointer transition-colors duration-300 hover:text-[--color-text-hover]">
           <p className="select-none text-xs">EN</p>
           <Image className="h-[15px] w-[18px] select-none ml-1 " src="/unitedstates.png" alt="" />
-          <TiArrowSortedDown className="text-xl bgred-300 hover:text-[--color-text-hover] " />
+          <TiArrowSortedDown className="text-xl bgred-300  " />
         </div>
         {theme === "light"
           ? <TiWeatherNight className="text-2xl cursor-pointer transition-colors duration-300 hover:text-[--color-text-hover]" onClick={(e) => { e.preventDefault(); toggleTheme(); }} />
