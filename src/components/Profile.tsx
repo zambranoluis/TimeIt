@@ -34,7 +34,7 @@ const ProfileClient = () => {
         </div>
         <div id="detailsContainer" className="flex flex-col z-[150] bottom-[20px] justify-center items-center p-4 gap-1">
           <p className="text-3xl font-bold">Seras Victoria</p>
-          <p className="text-xl fontbold">zambranomnk@gmail.com</p>
+          <p className="text-xl fontbold">SerasEterna@mail.com</p>
           <p className="text-xl fontbold">+58 412 3456 789</p>
         </div>
         <div id="buttonsContainer" className="flex gap-2">
